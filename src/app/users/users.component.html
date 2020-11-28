@@ -1,0 +1,30 @@
+<div class="container">
+ <div class="row">
+   <div class="col-md-12">
+    <h2>User Table</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User id </th>
+          <th>User Name</th>
+          <th>User Email</th>
+          <th>User Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users" (click)="setuser(user)">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.adress }}</td>
+          <td>{{ user.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-md-12">
+     <router-outlet></router-outlet>
+   </div>
+ </div>
+</div>

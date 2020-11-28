@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="empDetailsForm">
+        <div class="form-group">
+          <label for="empname">Employee Name</label>
+          <input type="text"
+           id="username"
+           class="form-control"
+           formControlName="employeename"
+           class="from-control">
+           <span *ngIf="!empDetailsForm.get('employeename').valid && empDetailsForm.get('employeename').touched"
+            class="help-block">
+            Please enter a valid employee details
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="emppassword">Employee Password</label>
+          <input type="text"
+           id="password"
+           class="form-control"
+           formControlName="employeepassword"
+           class="from-control">
+        </div>
+        <div class="radio" *ngFor="let gender of ['male', 'femail']">
+          <label>
+            <input type="radio"
+            formControlName="gender"
+             [value]="gender">{{gender}}
+          </label>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
